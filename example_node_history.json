@@ -1,0 +1,42 @@
+{
+  "inicio": {
+    "descricao": "Você está numa encruzilhada sob um céu cinzento e pesado. A estrada se divide. À esquerda, um
+   caminho sinuoso leva para uma floresta escura. À direita, a estrada continua em direção a uma aldeia distante, de
+   onde se vê uma fina coluna de fumaça.","opcoes": [
+      {
+        "texto": "Seguir para a floresta escura.",
+        "efeito": null,
+        "proximo_no": "floresta_entrada"
+      },
+      {
+        "texto": "Ir em direção à aldeia.",
+        "condicao": null,
+        "proximo_no": "aldeia_portao"
+      },
+      {
+        "texto": "Descansar um pouco antes de decidir (custa 1 hora).",
+        "efeito": {
+          "vida": 5,
+          "tempo": -1
+        },
+        "proximo_no": "inicio"
+      }
+    ]
+  },
+  "floresta_entrada": {
+    "descricao": "A entrada da floresta é intimidadora. Galhos retorcidos parecem garras prontas para agarrá-lo. O
+   ar aqui é frio.","opcoes": [
+      {
+        "texto": "Entrar na floresta.",
+        "efeito": {
+          "moral": -5
+        },
+        "proximo_no": "floresta_interior"
+      },
+      {
+        "texto": "Voltar para a encruzilhada.",
+        "proximo_no": "inicio"
+      }
+    ]
+  }
+}

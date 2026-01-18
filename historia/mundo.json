@@ -1,0 +1,76 @@
+{
+  "inicio": {
+    "descricao": "Você está numa encruzilhada sob um céu cinzento e pesado. A estrada se divide. À esquerda, um caminho sinuoso leva para uma floresta escura. À direita, a estrada continua em direção a uma aldeia distante, de onde se vê uma fina coluna de fumaça.",
+    "opcoes": [
+      {
+        "texto": "Seguir para a floresta escura.",
+        "respostas_validas": ["floresta", "escura", "esquerda", "sinuoso"],
+        "efeito": null,
+        "proximo_no": "floresta_entrada"
+      },
+      {
+        "texto": "Ir em direção à aldeia.",
+        "respostas_validas": ["aldeia", "vila", "povoado", "direita", "fumaça"],
+        "condicao": null,
+        "proximo_no": "aldeia_portao"
+      },
+      {
+        "texto": "Descansar um pouco antes de decidir.",
+        "respostas_validas": ["descansar", "pausa", "esperar", "sentar"],
+        "efeito": { "vida": 5, "tempo": 1 },
+        "proximo_no": "inicio"
+      }
+    ]
+  },
+  "floresta_entrada": {
+    "descricao": "A entrada da floresta é intimidadora. Galhos retorcidos parecem garras prontas para agarrá-lo. O ar aqui é frio e um silêncio pesado paira sobre o local.",
+    "opcoes": [
+      {
+        "texto": "Adentrar a floresta.",
+        "respostas_validas": ["adentrar", "entrar", "seguir", "continuar"],
+        "efeito": { "moral": -5 },
+        "proximo_no": "floresta_interior"
+      },
+      {
+        "texto": "Melhor não. Voltar para a encruzilhada.",
+        "respostas_validas": ["voltar", "retornar", "sair", "encruzilhada"],
+        "proximo_no": "inicio"
+      }
+    ]
+  },
+  "aldeia_portao": {
+    "descricao": "Você chega aos portões de madeira de uma pequena aldeia. Um guarda com uma lança e um olhar cansado observa sua aproximação. 'O que quer aqui, forasteiro?', ele pergunta.",
+    "opcoes": [
+      {
+        "texto": "Dizer que busca apenas um lugar para descansar e talvez trabalho.",
+        "respostas_validas": ["descansar", "trabalho", "paz", "responder", "falar"],
+        "proximo_no": "aldeia_taverna"
+      },
+      {
+        "texto": "Ignorar o guarda e voltar para a encruzilhada.",
+        "respostas_validas": ["ignorar", "voltar", "sair", "retornar"],
+        "proximo_no": "inicio"
+      }
+    ]
+  },
+  "floresta_interior": {
+    "descricao": "Você se perde na escuridão da floresta. O caminho desapareceu. Por enquanto, a única coisa a fazer é voltar.",
+    "opcoes": [
+      {
+        "texto": "Tentar encontrar o caminho de volta.",
+        "respostas_validas": ["voltar", "retornar", "sair", "encontrar"],
+        "proximo_no": "floresta_entrada"
+      }
+    ]
+  },
+  "aldeia_taverna": {
+    "descricao": "Você entra na taverna local. O lugar é simples, mas acolhedor. Algumas pessoas conversam baixo em mesas próximas. O taverneiro limpa um copo atrás do balcão.",
+    "opcoes": [
+      {
+        "texto": "Sair da taverna e explorar outros lugares.",
+        "respostas_validas": ["sair", "fora", "explorar"],
+        "proximo_no": "aldeia_portao"
+      }
+    ]
+  }
+}
